@@ -1,6 +1,14 @@
 <h2>Causes</h2>
 
-<div *ngFor="let cause of causes | async" class="panel panel-default">
+
+<h3>Filter causes</h3>
+<select (change)="onChange($event.target.value)">
+  <option value="all">Show All</option>
+  <option value="ascending">Most Ambitious First</option>
+  <option value="descending">Least Amibitious First</option>
+</select>
+
+<div *ngFor="let cause of causes | async | goal:filterByGoal" class="panel panel-default">
   <div class="panel-body">
     <h3 (click)="seeDetails(cause)">{{cause.name}}</h3>
     <hr>

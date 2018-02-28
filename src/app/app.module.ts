@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { routing } from './app.routing';
+import { GoalPipe } from './goal.pipe';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -26,7 +27,8 @@ export const firebaseConfig = {
     CauseListComponent,
     CauseEditComponent,
     CauseNewComponent,
-    CauseDetailComponent
+    CauseDetailComponent,
+    GoalPipe
   ],
   imports: [
     BrowserModule,

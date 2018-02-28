@@ -13,6 +13,7 @@ import { FirebaseListObservable } from 'angularfire2/database';
 export class CauseListComponent implements OnInit {
   causes: FirebaseListObservable<any[]>
   currentRoute: string = this.router.url;
+  filterByGoal: string = "all";
 
   constructor(private router: Router, private causeService: CauseService) { }
 
@@ -22,6 +23,10 @@ export class CauseListComponent implements OnInit {
 
   seeDetails(cause) {
     this.router.navigate(['causes', cause.$key])
+  }
+
+  onChange(optionFromMenu) {
+    this.filterByGoal = optionFromMenu;
   }
 
 }
