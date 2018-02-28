@@ -25,7 +25,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'causes/:id/edit',
-    component: CauseEditComponent
+    component: CauseDetailComponent
   }
 ];
 

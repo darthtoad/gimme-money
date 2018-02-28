@@ -4,4 +4,7 @@
 <input type="number" #toAdd>
 <button (click)="addFunds(toAdd.value); toAdd.value=''">Donate</button>
 <hr>
-<button (click)="edit(causeToDisplay)">Edit Cause</button>
+<button *ngIf="!currentRoute.includes('edit')" (click)="edit(causeToDisplay)">Edit Cause</button>
+<div *ngIf="currentRoute.includes('edit')">
+  <app-cause-edit></app-cause-edit>
+</div>

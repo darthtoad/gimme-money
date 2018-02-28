@@ -1,21 +1,23 @@
-<h4>Edit Cause</h4>
+<div *ngIf="causeToEdit">
+  <h4>Edit Cause</h4>
 
-<label>Name:</label>
-<input [(ngModel)]="selectedCause.name">
-<br>
+  <label>Name:</label>
+  <input [(ngModel)]="causeToEdit.name">
+  <br>
 
-<label>Goal:</label>
-<input type="number" [(ngModel)]="selectedCause.goal">
-<br>
+  <label>Goal:</label>
+  <input type="number" [(ngModel)]="causeToEdit.goal">
+  <br>
 
-<label>Current Funds:</label>
-<input type="number" [(ngModel)]="selectedCause.currentFunds">
-<br>
+  <label>Current Funds:</label>
+  <input type="number" [(ngModel)]="causeToEdit.currentFunds">
+  <br>
 
-<label>Description:</label>
-<input [(ngModel)]="selectedCause.description">
-<br>
+  <label>Description:</label>
+  <input [(ngModel)]="causeToEdit.description">
+  <br>
 
-<button (click)="beginUpdatingCause(selectedCause)">Update</button>
-<hr>
-<button class="btn btn-danger" (click)="beginDeletingCause(selectedCause)">Delete</button>
+  <button (click)="beginUpdatingCause(causeToEdit)">Update</button>
+  <hr>
+  <button class="btn btn-danger" (click)="beginDeletingCause(causeToEdit)">Delete</button>
+</div>

@@ -10,6 +10,7 @@ import { CauseNewComponent } from './cause-new/cause-new.component';
 import { CauseDetailComponent } from './cause-detail/cause-detail.component';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { routing } from './app.routing';
 
 export const firebaseConfig = {
@@ -31,6 +32,7 @@ export const firebaseConfig = {
     BrowserModule,
     FormsModule,
     HttpModule,
+    HttpClientModule,
     routing,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule

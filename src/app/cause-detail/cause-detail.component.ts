@@ -24,8 +24,6 @@ export class CauseDetailComponent implements OnInit {
     })
     this.causeService.getCauseById(this.causeId).subscribe(dataLastEmittedFromObserver => {
          this.causeToDisplay = dataLastEmittedFromObserver;
-
-         console.log(this.causeToDisplay);
        })
   }
 
@@ -34,7 +32,7 @@ export class CauseDetailComponent implements OnInit {
   }
 
   addFunds(value) {
-    this.causeToDisplay.currentFunds += parseFloat(value);
+    this.causeToDisplay.currentFunds = parseFloat(this.causeToDisplay.currentFunds) + parseFloat(value);
     this.causeService.updateCause(this.causeToDisplay);
   }
 

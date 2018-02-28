@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CauseService } from '../cause.service';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Location } from '@angular/common';
+import { Cause } from '../cause.model'
 
 @Component({
   selector: 'app-cause-edit',
@@ -8,8 +11,11 @@ import { CauseService } from '../cause.service';
   providers: [CauseService]
 })
 export class CauseEditComponent implements OnInit {
-  @Input() selectedCause;
-  constructor(private causeService: CauseService) { }
+  causeId: string;
+  causeToEdit;
+  currentRoute: string = this.router.url;
+
+  constructor(private router: Router, private route: ActivatedRoute, private location: Location, private causeService: CauseService) { }
 
   beginUpdatingCause(causeToUpdate){
     this.causeService.updateCause(causeToUpdate);
@@ -21,6 +27,12 @@ export class CauseEditComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.route.params.forEach((urlParameters) => {
+      this.causeId = urlParameters['id'];
+    })
+    this.causeService.getCauseById(this.causeId).subscribe(dataLastEmittedFromObserver => {
+       this.causeToEdit = dataLastEmittedFromObserver;
+    })
   }
 
 }
