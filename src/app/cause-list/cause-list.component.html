@@ -1,0 +1,11 @@
+<h2>Causes</h2>
+
+<div *ngFor="let cause of causes | async" class="panel panel-default">
+  <div class="panel-body">
+    <h3 (click)="seeDetails(cause)">{{cause.name}}</h3>
+    <hr>
+    <div *ngIf="currentRoute === '/causes/:id/edit'">
+      <app-cause-edit [selectedCause]="cause"></app-cause-edit>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<h4>Edit Cause</h4>
+
+<label>Name:</label>
+<input [(ngModel)]="selectedCause.name">
+<br>
+
+<label>Goal:</label>
+<input type="number" [(ngModel)]="selectedCause.goal">
+<br>
+
+<label>Current Funds:</label>
+<input type="number" [(ngModel)]="selectedCause.currentFunds">
+<br>
+
+<label>Description:</label>
+<input [(ngModel)]="selectedCause.description">
+<br>
+
+<button (click)="beginUpdatingCause(selectedCause)">Update</button>
+<hr>
+<button class="btn btn-danger" (click)="beginDeletingCause(selectedCause)">Delete</button>

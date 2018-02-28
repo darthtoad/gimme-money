@@ -1,0 +1,7 @@
+<h3>{{(causeToDisplay)?.name}}</h3>
+<h4>{{(causeToDisplay)?.currentFunds}}/{{(causeToDisplay)?.goal}}</h4>
+<p>Description: {{(causeToDisplay)?.description}}</p>
+<input type="number" #toAdd>
+<button (click)="addFunds(toAdd.value); toAdd.value=''">Donate</button>
+<hr>
+<button (click)="edit(causeToDisplay)">Edit Cause</button>

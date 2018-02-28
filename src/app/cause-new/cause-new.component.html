@@ -1,0 +1,25 @@
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Add New Cause</h3>
+  </div>
+  <div class="panel-body">
+    <label>Cause Name:</label>
+    <br>
+    <input #newName>
+    <br>
+    <label>Goal:</label>
+    <br>
+    <input #newGoal type="number">
+    <br>
+    <label>Current Funds:</label>
+    <br>
+    <input #newCurrentFunds>
+    <br>
+    <label>Cause description:</label>
+    <br>
+    <textarea #newDescription></textarea>
+    <br>
+    <button (click)="submitForm(newName.value, newGoal.value, newCurrentFunds.value, newDescription.value); newName.value=''; newGoal.value=''; newCurrentFunds.value=''; newDescription.value=''">Add New Cause</button>
+  </div>
+</div>

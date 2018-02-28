@@ -1,0 +1,18 @@
+{
+  "causes": [{
+    "name": "Let me not starve",
+    "goal": 100000,
+    "currentFunds": 1,
+    "description": "I need money so I don't die. Please give me money. k thx bai"
+  }, {
+    "name": "420 Blaze It",
+    "goal": 100,
+    "currentFunds": 10.50,
+    "description": "I need money to smoke weed. Maybe if you donate i'll smoke you up."
+  }, {
+    "name": "My toilet broke",
+    "goal": 300,
+    "currentFunds": 200,
+    "description": "My toilet broke and it's overflowing. I need money for a plummer."
+  }]
+}
